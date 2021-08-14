@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Stream from './components/Stream.js';
@@ -58,10 +58,8 @@ const initialStreams = {
 const App = () => {
 	const [streams, setStreams] = useState(initialStreams);
 
-	const updateStream = useCallback(
-		stream => setStreams({ ...streams, [stream.id]: stream }),
-		[streams],
-	);
+	const updateStream = stream =>
+		setStreams({ ...streams, [stream.id]: stream });
 
 	const positions = getPositions(streams);
 

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { streamPropType } from '../constants/commonPropTypes';
 import VideoCam from '../icons/VideoCam';
@@ -35,10 +35,8 @@ const CameraButton = styled.button`
 `;
 
 const StreamControls = ({ stream, updateStream }) => {
-	const onCameraClick = useCallback(
-		() => updateStream({ ...stream, isVideoOn: !stream.isVideoOn }),
-		[stream, updateStream],
-	);
+	const onCameraClick = () =>
+		updateStream({ ...stream, isVideoOn: !stream.isVideoOn });
 
 	return (
 		<Wrap>
