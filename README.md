@@ -33,4 +33,4 @@ Add a notification for users that tells them which users are hidden because thei
 - Only 1 guest is hidden -> "{name} is in the stream with audio only"
 - Multiple guests are hidden -> "{x} others are in the stream with audio only"
 
-The notification should _not_ be visible all the time. It should only appear for a short amount of time right after someone turns off their camera. It should fade out about 5 seconds later. Every time someones camera is turned off, the notification should appear for another 5 seconds.
+The notification should _not_ be visible all the time. It should only appear for a short amount of time right after someone turns off their camera. It should disappear about 5 seconds later. Every time someones camera is turned off, the notification should appear for another 5 seconds.
