@@ -44,13 +44,11 @@ const HiddenNotification = props => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useLayoutEffect(() => {
-		if (!shouldRender(props) && isVisible) {
-			setIsVisible(false);
-
-			return () => undefined;
-		}
-
 		if (!shouldRender(props)) {
+			if (isVisible) {
+				setIsVisible(false);
+			}
+
 			return () => undefined;
 		}
 
