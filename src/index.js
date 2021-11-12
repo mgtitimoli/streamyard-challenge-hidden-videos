@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import HiddenNotification from './components/HiddenNotification.js';
 import Stream from './components/Stream.js';
 import StreamControls from './components/StreamControls.js';
 import { getPositions } from './services/positions';
+
+const StyledHiddenNotification = styled(HiddenNotification)`
+	left: 50%;
+	position: absolute;
+	top: 6px;
+	transform: translateX(-50%);
+`;
 
 const Wrap = styled.div`
 	width: 100%;
@@ -82,6 +90,7 @@ const App = () => {
 						stream={stream}
 					/>
 				))}
+				<StyledHiddenNotification streams={Object.values(streams)} />
 			</StreamContainer>
 		</Wrap>
 	);
